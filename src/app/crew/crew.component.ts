@@ -15,6 +15,10 @@ export class CrewComponent implements OnInit {
 
   constructor() { }
 
+  add(memberName: string, isFirst: boolean) {
+    this.crew.push({name: memberName, firstMission: isFirst});
+  }
+
   ngOnInit() {
   }
 
