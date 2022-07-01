@@ -1,15 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-equipment',
-  templateUrl: './equipment.component.html',
-  styleUrls: ['./equipment.component.css']
+  selector: "app-equipment",
+  templateUrl: "./equipment.component.html",
+  styleUrls: ["./equipment.component.css"],
 })
 export class EquipmentComponent implements OnInit {
+  items: object[] = [
+    { name: "Habitat dome" },
+    { name: "Drones" },
+    { name: "Food containers" },
+    { name: "Oxygen tanks" },
+  ];
 
-  constructor() { }
+  add(name: string) {
+    for (let item of this.items) {
+      if (item["name"] === name) {
+        alert(`"${name}" is already packed on the rocket.`);
+        return false;
+      }
+    }
 
-  ngOnInit() {
+    this.items.push({ name: name });
+    return true;
   }
 
+  constructor() {}
+
+  ngOnInit() {}
 }
