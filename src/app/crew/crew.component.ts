@@ -17,7 +17,15 @@ export class CrewComponent implements OnInit {
   constructor() { }
 
   add(memberName: string, isFirst: boolean) {
+    for (let member of this.crew) {
+      if (member['name'] === memberName) {
+        alert(`"${memberName}" is already a member of the crew.`);
+        return false;
+      }
+    }
+
     this.crew.push({name: memberName, firstMission: isFirst});
+    return true;
   }
 
   remove(member: object) {
@@ -36,5 +44,4 @@ export class CrewComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
