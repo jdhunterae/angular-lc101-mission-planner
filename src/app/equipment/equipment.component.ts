@@ -6,22 +6,20 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./equipment.component.css"],
 })
 export class EquipmentComponent implements OnInit {
-  items: object[] = [
-    { name: "Habitat dome" },
-    { name: "Drones" },
-    { name: "Food containers" },
-    { name: "Oxygen tanks" },
+  items: string[] = [
+    "Habitat dome",
+    "Drones",
+    "Food containers",
+    "Oxygen tanks"
   ];
 
   add(name: string) {
-    for (let item of this.items) {
-      if (item["name"] === name) {
-        alert(`"${name}" is already packed on the rocket.`);
-        return false;
-      }
+    if (this.items.includes(name)) {
+      alert(`"${name}" is already packed on the rocket.`);
+      return false;
     }
 
-    this.items.push({ name: name });
+    this.items.push(name);
     return true;
   }
 
