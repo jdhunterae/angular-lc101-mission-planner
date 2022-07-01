@@ -25,6 +25,11 @@ export class EquipmentComponent implements OnInit {
     return true;
   }
 
+  remove(item: string) {
+    let index = this.items.indexOf(item);
+    this.items.splice(index, 1);
+  }
+
   edit(item: string) {
     this.itemBeingEdited = item;
   }

@@ -3,6 +3,7 @@
   <li *ngFor="let item of items">
     <span *ngIf="itemBeingEdited !== item; else elseBlock">
       <span (click)="edit(item);" class="editable-text">{{item}}</span>
+      <button (click)="remove(item);">remove</button>
     </span>
   
     <ng-template #elseBlock>
