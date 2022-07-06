@@ -2,16 +2,8 @@
     <h3>Equipment</h3>
     <ol>
         <li *ngFor="let item of equipmentItems">
-
-            <span *ngIf="focusedItem !== item; else addEquipmentBlock">
-                <span class="editable-text" (click)="focusedItem = item;">
-                    {{item.name}}, {{item.mass}} kg
-                </span>
-            </span>
-            <ng-template #addEquipmentBlock>
-                {{item.name}}, {{item.mass}} kg
-                <button (click)="addItem(item)" [disabled]="!canAdd(item)">Add to Cargo Hold</button>
-            </ng-template>
+            <button (click)="addItem(item)" [disabled]="!canAdd(item)">Add to Cargo Hold</button>
+            {{item.name}}, {{item.mass}} kg
         </li>
     </ol>
 </div>
