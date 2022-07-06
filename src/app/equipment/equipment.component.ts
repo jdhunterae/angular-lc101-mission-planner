@@ -33,6 +33,11 @@ export class EquipmentComponent implements OnInit {
     this.cargoMass += item["mass"];
   }
 
+  canAdd(item): boolean {
+    let remaining = this.getMassRemaining();
+    return item["mass"] <= remaining;
+  }
+
   getMassRemaining(): number {
     this.cargoMass = 0;
 

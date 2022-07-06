@@ -10,7 +10,7 @@
             </span>
             <ng-template #addEquipmentBlock>
                 {{item.name}}, {{item.mass}} kg
-                <button (click)="addItem(item)">Add to Cargo Hold</button>
+                <button (click)="addItem(item)" [disabled]="!canAdd(item)">Add to Cargo Hold</button>
             </ng-template>
         </li>
     </ol>
