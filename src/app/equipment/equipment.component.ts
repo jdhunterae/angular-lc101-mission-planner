@@ -32,4 +32,14 @@ export class EquipmentComponent implements OnInit {
     this.cargoHold.push(item);
     this.cargoMass += item["mass"];
   }
+
+  getMassRemaining(): number {
+    this.cargoMass = 0;
+
+    for (let item of this.cargoHold) {
+      this.cargoMass += item["mass"];
+    }
+
+    return this.maximumAllowedMass - this.cargoMass;
+  }
 }

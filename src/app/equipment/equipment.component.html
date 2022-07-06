@@ -2,32 +2,29 @@
     <h3>Equipment</h3>
     <ol>
         <li *ngFor="let item of equipmentItems">
-        
+
             <span *ngIf="focusedItem !== item; else addEquipmentBlock">
                 <span class="editable-text" (click)="focusedItem = item;">
-                {{item.name}}, {{item.mass}} kg
+                    {{item.name}}, {{item.mass}} kg
+                </span>
             </span>
-        </span>
-        <ng-template #addEquipmentBlock>
-            {{item.name}}, {{item.mass}} kg
-            <button (click)="addItem(item)">Add to Cargo Hold</button>
-        </ng-template>
-
-
-            <!-- "Add to Cargo Hold" button goes here. -->
+            <ng-template #addEquipmentBlock>
+                {{item.name}}, {{item.mass}} kg
+                <button (click)="addItem(item)">Add to Cargo Hold</button>
+            </ng-template>
         </li>
     </ol>
 </div>
 
 <hr>
 
-<div class = "displayBox">
+<div class="displayBox">
     <h3>Cargo Hold: {{cargoHold.length}}/{{maxItems}} Spots Filled</h3>
     <ol>
         <li *ngFor="let equipment of cargoHold">{{equipment.name}}</li>
     </ol>
     <p>Mass in Hold: {{cargoMass}} kg</p>
-    <p>Mass Budget Remaining: {{<!-- Calculate mass remaining here. -->}} kg</p>
+    <p>Mass Budget Remaining: {{getMassRemaining()}} kg
+    </p>
     <!-- Add the "Empty Hold" button here. -->
 </div>
-
