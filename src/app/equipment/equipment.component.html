@@ -15,7 +15,7 @@
     <ol>
         <li *ngFor="let equipment of cargoHold">
             {{equipment.name}}
-            <button class="active" (click)="removeItem(item)">&#10060;</button>
+            <button class="active" (click)="removeItem(equipment)">x</button>
         </li>
     </ol>
     <p>Mass in Hold: {{cargoMass}} kg</p>
