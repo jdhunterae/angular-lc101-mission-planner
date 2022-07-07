@@ -8,6 +8,7 @@ import { Component, OnInit } from "@angular/core";
 export class CrewComponent implements OnInit {
   inCrew: boolean = false;
   crew: object[] = [];
+  selectedMember: object = null;
 
   candidates: object[] = [
     {
@@ -53,6 +54,8 @@ export class CrewComponent implements OnInit {
 
   // Code the 'addCrewMember' function here:
   addCrewMember(candidate: object) {
+    this.selectedMember = candidate;
+
     if (this.crew.includes(candidate)) {
       this.crew.splice(this.crew.indexOf(candidate), 1);
       return;
