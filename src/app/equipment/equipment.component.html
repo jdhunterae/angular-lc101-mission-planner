@@ -2,7 +2,7 @@
     <h3>Equipment</h3>
     <ol>
         <li *ngFor="let item of equipmentItems">
-            <button (click)="addItem(item)" [class.active-button]="canAdd(item)" [disabled]="!canAdd(item)">Add to Cargo Hold</button>
+            <button (click)="addItem(item)" [class.active]="canAdd(item)" [disabled]="!canAdd(item)">Add to Cargo Hold</button>
             {{item.name}}, {{item.mass}} kg
         </li>
     </ol>
