@@ -69,6 +69,10 @@ export class EquipmentComponent implements OnInit {
     return this.getMassRemaining() <= 200;
   }
 
+  removeItem(item: object) {
+    this.cargoHold.splice(this.cargoHold.indexOf(item), 1);
+  }
+
   emptyHold() {
     this.cargoHold = [];
     this.getMassRemaining();
