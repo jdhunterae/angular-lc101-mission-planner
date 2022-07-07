@@ -54,13 +54,7 @@ export class EquipmentComponent implements OnInit {
     return this.maximumAllowedMass - this.cargoMass;
   }
 
-  getRemainingColor(): string {
-    let remaining = this.getMassRemaining();
-
-    if (remaining <= 200) {
-      return 'red';
-    }
-
-    return "";
+  nearingMaxMass() : boolean {
+    return this.getMassRemaining() <= 200;
   }
 }
