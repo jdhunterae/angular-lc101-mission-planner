@@ -54,6 +54,14 @@ export class EquipmentComponent implements OnInit {
     return this.maximumAllowedMass - this.cargoMass;
   }
 
+  getButtonColor(item: object): string {
+    if (this.canAdd(item)) {
+      return "khaki";
+    }
+
+    return "";
+  }
+
   getRemainingColor(): string {
     let remaining = this.getMassRemaining();
 
