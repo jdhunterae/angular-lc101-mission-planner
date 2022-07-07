@@ -13,10 +13,9 @@ h3 {
 }
 
 .active {
-    background-color: khaki;
+    background-color: #e3e0cc;
 }
 
-/* Add the 'nearMaxMass' class style here: */
 .nearMaxMass {
     font-weight: bold;
     color: red;
