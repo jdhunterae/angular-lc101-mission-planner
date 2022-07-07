@@ -36,12 +36,23 @@ export class EquipmentComponent implements OnInit {
   }
 
   canAdd(item): boolean {
+    let quantity = 0;
+
+    for (let equip of this.cargoHold) {
+      if (equip === item) {
+        quantity += 1;
+      }
+    }
+
+    if (quantity >= 2) {
+      return false;
+    }
+
     if (this.cargoHold.length >= this.maxItems) {
       return false;
     }
 
-    let remaining = this.getMassRemaining();
-    return item["mass"] <= remaining;
+    return item["mass"] <= this.getMassRemaining();
   }
 
   getMassRemaining(): number {
