@@ -57,4 +57,9 @@ export class EquipmentComponent implements OnInit {
   nearingMaxMass() : boolean {
     return this.getMassRemaining() <= 200;
   }
+
+  emptyHold() {
+    this.cargoHold = [];
+    this.getMassRemaining();
+  }
 }

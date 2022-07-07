@@ -18,5 +18,6 @@
     <p>Mass in Hold: {{cargoMass}} kg</p>
     <p [class.nearMaxMass]="nearingMaxMass()">Mass Budget Remaining: {{getMassRemaining()}} kg
     </p>
-    <!-- Add the "Empty Hold" button here. -->
+    
+    <button (click)="emptyHold()" [disabled]="cargoHold.length === 0">Empty Hold</button>
 </div>
